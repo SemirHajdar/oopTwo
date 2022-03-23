@@ -10,17 +10,20 @@ public class Student {
     public Student(HashMap<Integer, String> studentInfo) {
         this.studentInfo = studentInfo;
     }
+
     public void printStudentsNames() {
         for (HashMap.Entry singleStudent : studentInfo.entrySet()) {
             System.out.println("Student name: " + singleStudent.getValue());
         }
     }
+
     public void printOrdinalNumber() {
         for (HashMap.Entry singleStudent : studentInfo.entrySet()) {
             System.out.println("Ordinal number: " + singleStudent.getKey());
-            }
         }
-    public void addStudent () {
+    }
+
+    public void addStudent() {
         Scanner reader = new Scanner(System.in);
         char answer;
         do {
@@ -28,28 +31,34 @@ public class Student {
             answer = reader.next().charAt(0);
             if (answer == 'y' || answer == 'Y') {
                 System.out.println("Please enter Ordinal number (Integer) and Student Name ");
-                studentInfo.put(reader.nextInt(),reader.nextLine());
-        } else
-        break;
-            } while (true);
+                studentInfo.put(reader.nextInt(), reader.nextLine());
+            } else
+                break;
+        } while (true);
         System.out.println(studentInfo);
     }
-    public void replaceStudent () {
+
+    public void replaceStudent() {
         Scanner reader = new Scanner(System.in);
         System.out.println("Please enter the key number and New Student Name: ");
         studentInfo.replace(reader.nextInt(), reader.nextLine());
-        System.out.println("Map after replacement of Student: "+ studentInfo);
+        System.out.println("Map after replacement of Student: " + studentInfo);
     }
-    public void removeStudent () {
+
+    public void removeStudent() {
         Scanner reader = new Scanner(System.in);
         System.out.println("Please enter the Ordinal number of Student name which you want to remove ");
         studentInfo.remove(reader.nextInt());
         System.out.println("Map after removal of Student: " + studentInfo);
     }
+
     public HashMap<Integer, String> getStudentInfo() {
+
         return studentInfo;
     }
+
     public void setStudentInfo(HashMap<Integer, String> studentInfo) {
+
         this.studentInfo = studentInfo;
     }
 }
