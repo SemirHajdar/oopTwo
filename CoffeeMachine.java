@@ -6,22 +6,19 @@ public class CoffeeMachine {
     Double coffeeCapacityInMachine;
 
     CoffeeMachine(Double coffeeCapacityInMachine, Double spentCapacityOfCoffee, Double fullCapacityOfCoffee) {
-
-        this.spentCapacityOfCoffee = 60.00;
-        this.fullCapacityOfCoffee = 100.00;
+        this.spentCapacityOfCoffee = spentCapacityOfCoffee;
+        this.fullCapacityOfCoffee = fullCapacityOfCoffee;
         this.coffeeCapacityInMachine = coffeeCapacityInMachine;
     }
-    public void alertForLowCapacityOfCoffe() {
-        if (statusOfCoffeeCapacityInMachine()<50.00) {
+
+    public void alertForLowCapacityOfCoffee() {
+        if (statusOfCoffeeCapacityInMachine() < 50.00) {
             System.out.println("Please Charge your Machine with coffee, it is on: " + statusOfCoffeeCapacityInMachine() + "% of Capacity.");
         }
     }
-    private double statusOfCoffeeCapacityInMachine () {
-    Double numberA = this.spentCapacityOfCoffee;
-    Double numberB = this.spentCapacityOfCoffee;
-    Double numberC = this.fullCapacityOfCoffee - this.spentCapacityOfCoffee;
 
-    return numberC;
+    private double statusOfCoffeeCapacityInMachine() {
+        return this.fullCapacityOfCoffee - this.spentCapacityOfCoffee;
     }
 }
 
